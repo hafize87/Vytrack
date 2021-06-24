@@ -1,6 +1,7 @@
 package com.vytrack.tests.US3_Buttons;
 
 import com.vytrack.utilities.BrowserUtils;
+import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import com.vytrack.utilities.VytrackUtils;
 import org.openqa.selenium.By;
@@ -15,7 +16,7 @@ public class AC_1_3_4_5 {
     @BeforeClass
     public void setUp()  {
 
-        Driver.getDriver().get("https://qa3.vytrack.com/user/login");
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
         VytrackUtils.login(Driver.getDriver());
         VytrackUtils.fleet(Driver.getDriver());
     }

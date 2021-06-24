@@ -14,7 +14,7 @@ public class AC_1_2_3_4 {
     @BeforeClass
     public void setUp()  {
 
-        Driver.getDriver().get("https://qa3.vytrack.com/user/login");
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
         VytrackUtils.login(Driver.getDriver());
         VytrackUtils.fleet(Driver.getDriver());
    }
