@@ -11,15 +11,12 @@ import java.util.List;
 
 public class AC_1_2_3_4 {
 
-
     @BeforeClass
     public void setUp()  {
 
         Driver.getDriver().get("https://qa3.vytrack.com/user/login");
         VytrackUtils.login(Driver.getDriver());
         VytrackUtils.fleet(Driver.getDriver());
-
-
    }
 
     @Test
@@ -125,4 +122,4 @@ public class AC_1_2_3_4 {
 
     }
 
-    }
+}
