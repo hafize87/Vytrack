@@ -54,4 +54,75 @@ public class AC_1_2_3_4 {
 
     }
 
+    @Test
+    public void tc003_Add_Event(){
+
+//       Given (truck driver) is on selected car General information page.
+//       When (truck driver) add the Event.
+//       Then (truck driver) should be able to see the Event under Activity tab and General information page as well
+
+        BrowserUtils.sleep(2);
+        WebElement anyCar = Driver.getDriver().findElement(By.xpath("//td[@class='string-cell grid-cell grid-body-cell grid-body-cell-LicensePlate']"));
+        anyCar.click();
+
+
+        BrowserUtils.sleep(2);
+        WebElement addEventButton = Driver.getDriver().findElement(By.xpath("//a[@title='Add an event to this record']"));
+        addEventButton.click();
+
+        BrowserUtils.sleep(2);
+        WebElement titleField = Driver.getDriver().findElement(By.xpath("//input[@name='oro_calendar_event_form[title]']"));
+        titleField.sendKeys("studyGroup");
+
+        BrowserUtils.sleep(2);
+        WebElement saveButton = Driver.getDriver().findElement(By.xpath("//button[.='Save']"));
+        saveButton.click();
+
+        BrowserUtils.sleep(2);
+        WebElement generalTabEvent = Driver.getDriver().findElement(By.xpath("//strong[.='studyGroup']"));
+
+        Assert.assertTrue(generalTabEvent.isDisplayed());
+
+        BrowserUtils.sleep(2);
+        WebElement activityButton = Driver.getDriver().findElement(By.xpath("//a[.='Activity']"));
+        activityButton.click();
+
+        BrowserUtils.sleep(2);
+        WebElement activityTabEvent = Driver.getDriver().findElement(By.xpath("//strong[.='studyGroup']"));
+
+        Assert.assertTrue(activityTabEvent.isDisplayed());
+
+    }
+
+    @Test
+    public void tc004_Reset_Settings(){
+
+
+//        Given that truck driver logged into Vytrack
+//        When truck driver click on fleet module tab and click on vehicle
+//        And  truck driver goes to another vehicle page records
+//        Then the truck driver clicks the reset button, and the truck driver can reset the setting
+
+
+        BrowserUtils.sleep(2);
+        WebElement page4 = Driver.getDriver().findElement(By.xpath("//a[@data-grid-pagination-direction='next']"));
+        page4.click();
+
+        BrowserUtils.sleep(2);
+        WebElement resetButton = Driver.getDriver().findElement(By.xpath("(//i[@class='fa-refresh'])[2]"));
+        resetButton.click();
+
+        WebElement page1 = Driver.getDriver().findElement(By.xpath("//input[contains(@value,'1')]"));
+
+        if(page1.getAttribute("value").equals("1")){
+
+            System.out.println("Page successfully refresh");
+        }
+        else {
+            System.out.println("Page is not successfully refresh");
+        }
+
+
+    }
+
     }
