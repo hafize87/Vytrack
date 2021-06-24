@@ -15,8 +15,7 @@ public class AC_1_2_3_4 {
     @BeforeClass
     public void setUp()  {
 
-        Driver.getDriver().get(ConfigurationReader.getProperty("browser"));
-        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
+        Driver.getDriver().get("https://qa3.vytrack.com/user/login");
         VytrackUtils.login(Driver.getDriver());
         VytrackUtils.fleet(Driver.getDriver());
 
@@ -36,5 +35,23 @@ public class AC_1_2_3_4 {
 
     }
 
+    @Test
+    public void tc002_Selected_Car_Info() {
 
-}
+//        -Given that truck driver logged into Vytrack
+//        -When truck driver click on fleet module tab and click on vehicle
+//        -And truck driver click on any car on the grid
+//        -Then truck driver should be able to see general information
+//        about the car
+
+        BrowserUtils.sleep(2);
+        WebElement anyCar = Driver.getDriver().findElement(By.xpath("//td[@class='string-cell grid-cell grid-body-cell grid-body-cell-LicensePlate']"));
+        anyCar.click();
+
+        BrowserUtils.sleep(2);
+        WebElement generalInformation = Driver.getDriver().findElement(By.xpath("//span[.='General Information']"));
+        Assert.assertTrue(generalInformation.isDisplayed());
+
+    }
+
+    }
