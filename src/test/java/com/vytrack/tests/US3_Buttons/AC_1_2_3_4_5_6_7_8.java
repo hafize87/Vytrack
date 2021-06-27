@@ -21,12 +21,14 @@ public class AC_1_2_3_4_5_6_7_8 {
         VytrackUtils.fleet(Driver.getDriver());
     }
 
-//    Given (truck driver) is on Vytrack Vehicles page.
-//    When I (truck driver) click Export Grid dropdown.
-//    Then (truck driver) should be able to see CSV and XLSX options.
 
     @Test
     public void tc001_Export_Grid_Dropdown() {
+
+
+//    Given (truck driver) is on Vytrack Vehicles page.
+//    When I (truck driver) click Export Grid dropdown.
+//    Then (truck driver) should be able to see CSV and XLSX options.
 
         BrowserUtils.sleep(2);
         WebElement exportGridButton = Driver.getDriver().findElement(By.linkText("Export Grid"));
@@ -38,8 +40,15 @@ public class AC_1_2_3_4_5_6_7_8 {
         Assert.assertTrue(csvXlsxOption.isDisplayed(), "csvXlsxOption is not displayed. FAIL!!!");
     }
 
+
+
     @Test
     public void tc002_Dropdown_Is_On_Left() {
+
+//    Given truck driver is logged into Vytrack
+//    When driver clicks on fleet module tab
+//    And clicks on vehicle button
+//    Then driver should be able to see Export Grid dropdown on the left of the page
 
         BrowserUtils.sleep(2);
         WebElement exportGrit = Driver.getDriver().findElement(By.xpath("//a[@title='With this button you will export the content of the grid as it appears to you, with filters and sorting applied. All pages will be exported.']/../../../../preceding-sibling::div"));
@@ -56,12 +65,13 @@ public class AC_1_2_3_4_5_6_7_8 {
     }
 
 
+
+    @Test
+    public void tc003_Refresh_Button() {
+
 //    Given (truck driver) is on Vytrack Vehicles page.
 //    When I (truck driver) click the refresh button.
 //    Then (truck driver) should be able to see the Vehicles page is refreshed.
-
-    @Test
-    public void tc003_Refresh() {
 
         BrowserUtils.sleep(2);
         WebElement refreshButton = Driver.getDriver().findElement(By.xpath("//a[@title='Refresh']"));
@@ -72,12 +82,16 @@ public class AC_1_2_3_4_5_6_7_8 {
     }
 
 
-//    Given (truck driver) is on Vytrack Vehicles page.
-//    When I (truck driver) click the reset button.
-//    Then (truck driver) should be able to see the Vehicles page is resetted.
-
     @Test
-    public void tc004_Grid_Settings() {
+    public void tc004_reset_button() {
+
+        // Scenario 1: Driver can click reset button and page refreshes
+
+//        Given truck driver log into Vytrack
+//        When truck driver click on fleet module tab
+//        And click on reset button
+//        Then the truck driver able to refresh the page
+
 
 //          BrowserUtils.sleep(2);
 //        WebElement page4 = Driver.getDriver().findElement(By.xpath("//a[@data-grid-pagination-direction='next']"));
@@ -104,13 +118,16 @@ public class AC_1_2_3_4_5_6_7_8 {
 
     }
 
-//    Given (truck driver) is on Vytrack Vehicles page.
-//    When I (truck driver) click Grid Settings button.
-//    Then (truck driver) should be able to see Grid Settings dropdown menu.
-
 
     @Test
-    public void tc005_Grid_Settings() {
+    public void tc005_grid_settings() {
+
+//           Scenario 1: Driver can click grid settings button and drop down menu appears
+//        Given truck driver log into Vytrack
+//        When truck driver click on fleet module tab
+//        And click on grid settings button
+//        Then the truck driver able to see drop down menu
+
 
         BrowserUtils.sleep(2);
         WebElement gritSettingButton = Driver.getDriver().findElement(By.xpath("//div/a[@ title = 'Grid Settings']/i"));
@@ -129,7 +146,14 @@ public class AC_1_2_3_4_5_6_7_8 {
 
 
     @Test
-    public void tc006_Reset_Refresh_Button() {
+    public void tc006_refresh_button_on_the_left_side_of_the_reset_button() {
+
+//             Scenario 1: Driver verifies refresh button is on the left side of the Reset button
+//        Given truck driver log into Vytrack
+//        When truck driver click on fleet module tab
+//        And click on refresh button
+//        Then the truck driver able to see that refresh button on the left side of the Reset button
+
 
         BrowserUtils.sleep(2);
         WebElement refresh = Driver.getDriver().findElement(By.xpath("//a[@title = 'Refresh']//following-sibling::a[@title='Reset']"));
@@ -144,6 +168,10 @@ public class AC_1_2_3_4_5_6_7_8 {
     @Test
     public void tc007_Grid_Settings_on_The_Right_of_The_Reset() {
 
+//               Scenario 1: Driver verifies grid settings is on the right side of the reset button
+//        Given driver is on Fleet Management page
+//        When driver looks on the page
+//        Then driver should see Grid Settings on the right side of the Reset button
 
 
         BrowserUtils.sleep(2);
@@ -156,7 +184,12 @@ public class AC_1_2_3_4_5_6_7_8 {
 
 
     @Test
-    public void tc008_Grid_Settings_on_The_Righ_of_The_Page() {
+    public void tc008_Grid_Settings_on_The_Right_of_The_Page() {
+//
+//           Scenario 1: Driver verifies grid settings is on the right side of page
+//        Given driver is on Fleet Management page
+//        When driver looks on the page
+//        Then driver should see Grid Setting button is on the right of the page
 
 
         BrowserUtils.sleep(2);
