@@ -92,7 +92,7 @@ public class AC_1_2_3_4_5_6_7_8 {
 //        And click on reset button
 //        Then the truck driver able to refresh the page
 
-
+//
 //          BrowserUtils.sleep(2);
 //        WebElement page4 = Driver.getDriver().findElement(By.xpath("//a[@data-grid-pagination-direction='next']"));
 //        page4.click();
@@ -111,7 +111,7 @@ public class AC_1_2_3_4_5_6_7_8 {
 //            System.out.println("Page is not successfully refresh");
 //        }
 
-        // Second Way
+//        // Second Way
         WebElement resetButton = Driver.getDriver().findElement(By.xpath("//a[@title='Reset']"));
         resetButton.click();
         Assert.assertTrue(resetButton.isEnabled());
@@ -208,9 +208,9 @@ public class AC_1_2_3_4_5_6_7_8 {
     }
 
 
-    @AfterClass
-    public void tearDown() {
-        Driver.closeDriver();
-    }
+//    @AfterClass
+//    public void tearDown() {
+//        Driver.closeDriver();
+//    }
 
 }
